@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tavonga Sumani — Software Engineering Student | Full Stack Developer | AI Enthusiast. Modern portfolio featuring projects, skills, interests, and contact information."
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Tavonga Sumani | Software Engineer Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Arial"],
+              display: ["Plus Jakarta Sans", "Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Arial"],
+              mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+            },
+            colors: {
+              ink: {
+                950: "#05060a",
+                900: "#090A12",
+                850: "#0b0d16",
+                800: "#0e1020",
+                700: "#141737",
+              },
+              neon: {
+                blue: "#00FFBB",
+                purple: "#00FFBB",
+                pink: "#00FFBB",
+                lime: "#00FFBB",
+              },
+            },
+            boxShadow: {
+              glow: "0 0 0 1px rgba(107, 228, 255, 0.18), 0 0 40px rgba(167, 139, 250, 0.12)",
+              glowStrong: "0 0 0 1px rgba(107, 228, 255, 0.24), 0 0 60px rgba(255, 79, 216, 0.14)",
+            },
+            keyframes: {
+              floaty: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              sweep: {
+                "0%": { transform: "translateX(-120%)", opacity: "0" },
+                "15%": { opacity: "1" },
+                "100%": { transform: "translateX(120%)", opacity: "0" },
+              },
+              pulseGlow: {
+                "0%, 100%": { boxShadow: "0 0 0 1px rgba(107, 228, 255, 0.18), 0 0 40px rgba(167, 139, 250, 0.12)" },
+                "50%": { boxShadow: "0 0 0 1px rgba(255, 79, 216, 0.24), 0 0 60px rgba(107, 228, 255, 0.14)" },
+              },
+              speedIn: {
+                "0%": { transform: "translateX(-12px)", opacity: "0" },
+                "100%": { transform: "translateX(0px)", opacity: "1" },
+              },
+            },
+            animation: {
+              floaty: "floaty 5.5s ease-in-out infinite",
+              sweep: "sweep 2.4s ease-in-out infinite",
+              pulseGlow: "pulseGlow 3.8s ease-in-out infinite",
+              speedIn: "speedIn 700ms cubic-(.2,.8,.2,1) both",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="site-body h-full bg-black text-white antialiased selection:bg-[#00FFBB]/25 selection:text-black">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-ink-800 focus:px-4 focus:py-3 focus:text-white focus:shadow-glow"
+      >Skip to content</a
+    >
+
+    <!-- Below-hero ambient layers (subtle on black) -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden below-hero-bg">
+      <div class="bg-grid opacity-20"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="ma-header hero-header">
+      <div class="ma-header__bar mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5">
+        <div class="flex w-full flex-wrap items-center justify-between gap-3">
+          <div class="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+            <a class="ma-brand font-display" href="./index.html">Tavonga Sumani</a>
+            <span class="ma-badge">Available for work</span>
+          </div>
+
+          <div class="ma-header__actions hidden flex-wrap items-center gap-4 text-sm font-medium md:flex">
+            <a class="ma-header__link" href="./contact.html">Contact</a>
+            <span class="ma-header__clock text-white/55" id="headerClock" aria-live="polite"></span>
+            <nav class="hero-nav-pill font-display flex items-center" aria-label="Primary navigation">
+              <a class="hero-nav-link is-active" href="./index.html" data-nav="home">Home</a>
+              <a class="hero-nav-link" href="./about.html" data-nav="profile">Profile</a>
+              <a class="hero-nav-link" href="./projects.html" data-nav="blog">Blog</a>
+              <button type="button" id="themeToggle" class="hero-theme-btn" aria-label="Switch to light theme" title="Toggle theme">
+                <svg class="hero-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </nav>
+          </div>
+
+          <div class="flex items-center gap-2 md:hidden">
+            <button type="button" id="themeToggleMobile" class="hero-theme-btn hero-theme-btn--solo" aria-label="Switch to light theme" title="Toggle theme">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              id="mobileMenuBtn"
+              class="hero-mobile-toggle"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              aria-label="Open menu"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hero-mobile-menu hidden md:hidden" role="navigation" aria-label="Mobile menu">
+        <div class="hero-mobile-menu__inner font-display">
+          <a class="hero-mobile-link" href="./index.html">Home</a>
+          <a class="hero-mobile-link" href="./about.html">Profile</a>
+          <a class="hero-mobile-link" href="./projects.html">Blog</a>
+          <div class="hero-mobile-divider" role="separator"></div>
+          <a class="hero-mobile-link hero-mobile-link--muted" href="./about.html#skills">Skills</a>
+          <a class="hero-mobile-link hero-mobile-link--muted" href="./about.html#experience">Experience</a>
+          <a class="hero-mobile-link hero-mobile-link--muted" href="./about.html#interests">Interests</a>
+          <a class="hero-mobile-link hero-mobile-link--muted" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO — minimalist reference layout (#000, fluid lines, glass nav) -->
+      <section id="home" class="hero-ref relative min-h-[100dvh] bg-black text-white">
+        <div class="hero-parallax-bg" aria-hidden="true"></div>
+        <div class="hero-parallax-vignette" aria-hidden="true"></div>
+        <span class="hero-astro-dot" aria-hidden="true"></span>
+
+        <svg
+          class="hero-flows hero-flows--minimal"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 900"
+          preserveAspectRatio="xMidYMid slice"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00FFBB" stop-opacity="0.35" />
+              <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2" />
+              <stop offset="100%" stop-color="#00FFBB" stop-opacity="0.3" />
+            </linearGradient>
+          </defs>
+          <path
+            class="hero-flow hero-flow--a"
+            fill="none"
+            stroke="url(#flowGrad)"
+            stroke-width="1.25"
+            d="M -120 620 C 180 380, 420 760, 720 520 S 1180 200, 1560 420"
+          />
+          <path
+            class="hero-flow hero-flow--b"
+            fill="none"
+            stroke="rgba(255,255,255,0.18)"
+            stroke-width="1"
+            d="M -80 480 C 260 220, 520 640, 820 380 S 1220 120, 1500 300"
+          />
+          <path
+            class="hero-flow hero-flow--c"
+            fill="none"
+            stroke="rgba(0,255,187,0.22)"
+            stroke-width="0.9"
+            d="M -100 720 C 300 500, 560 820, 900 560 S 1280 380, 1580 580"
+          />
+          <path
+            class="hero-flow hero-flow--d"
+            fill="none"
+            stroke="rgba(255,255,255,0.12)"
+            stroke-width="0.85"
+            d="M 200 -40 C 360 200, 320 480, 520 640 S 980 780, 1320 640"
+          />
+        </svg>
+
+        <p class="ma-hero-quote hidden max-w-xs text-right text-sm italic leading-relaxed text-white/55 md:absolute md:right-6 md:top-36 md:z-[3] md:block lg:right-10">
+          Building calm, fast interfaces — with a bias for clarity and measurable impact.
+        </p>
+
+        <div class="hero-ref__inner relative z-[2] flex min-h-[100dvh] flex-col px-4 pb-10 pt-36 sm:px-6 sm:pb-14 sm:pt-40">
+          <div class="reveal mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center">
+            <p class="ma-hero-stats font-mono text-sm text-[#00FFBB] sm:text-base">
+              2020—<span id="heroYear">2026</span> <span class="text-white/35">/</span> Full stack · AI · product thinking
+            </p>
+
+            <div class="hero-name-grid font-display mt-6">
+              <div class="hero-name-line">
+                <span class="hero-name-word">TAVONGA</span>
+                <span class="hero-name-word hero-name-word--right">SUMANI</span>
+              </div>
+            </div>
+
+            <p class="ma-hero-role mt-6 max-w-2xl text-lg font-medium text-white/90 sm:text-xl">
+              Software Engineering Student, based in Zimbabwe.
+            </p>
+
+            <p class="hero-tagline mt-4 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">
+              I build real-world digital solutions using modern web and AI technologies.
+            </p>
+
+            <div class="hero-cta-row mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-semibold sm:text-base">
+              <a class="hero-cta-link" href="./projects.html">View Projects</a>
+              <span class="text-white/25" aria-hidden="true">|</span>
+              <a class="hero-cta-link" href="./contact.html">Contact Me</a>
+            </div>
+
+            <p class="mt-4 text-sm text-white/45">Available for internships · Zimbabwe + Remote</p>
+          </div>
+
+          <div class="reveal relative z-[2] mx-auto mt-auto flex w-full max-w-6xl flex-wrap justify-center gap-3 pt-10">
+            <span class="hero-skill-pill">Full Stack</span>
+            <span class="hero-skill-pill">AI Enthusiast</span>
+            <span class="hero-skill-pill">Software Engineer</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section ma-section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="ma-section__head reveal">
+            <span class="ma-section__num">01.</span>
+            <h2 class="ma-section__title">ABOUT</h2>
+            <p class="section-kicker ma-section__kicker">A story built on curiosity, performance, and creativity.</p>
+          </div>
+        </div>
+        <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr,1.1fr]">
+          <div class="reveal">
+            <div class="about-bio glass p-5 sm:p-6">
+              <div class="about-bio-label">Profile overview</div>
+              <p class="leading-relaxed text-white/80">
+                I’m a passionate software engineering student who loves turning ideas into reliable, user-friendly systems.
+                My interests sit at the intersection of <span class="text-white">innovation</span>,
+                <span class="text-white">artificial intelligence</span>, and <span class="text-white">automotive technology</span> —
+                especially the performance mindset behind Formula 1 engineering, where small improvements create massive results.
+              </p>
+              <p class="mt-4 leading-relaxed text-white/80">
+                I’m also inspired by anime storytelling — the way strong narratives, clear visuals, and emotion can shape
+                memorable experiences. That influence shows up in how I design interfaces: clean layouts, strong hierarchy,
+                and subtle motion that feels intentional.
+              </p>
+              <p class="mt-4 leading-relaxed text-white/80">
+                I enjoy problem solving, learning fast, and collaborating with teams to ship meaningful work. My goal is to build
+                impactful technology solutions in <span class="text-white">Zimbabwe</span> and globally — products that help people,
+                improve efficiency, and push what’s possible.
+              </p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="feature-grid">
+              <div class="feature">
+                <div class="feature-icon" aria-hidden="true"><i data-lucide="trending-up"></i></div>
+                <div>
+                  <div class="feature-title">Performance mindset</div>
+                  <div class="feature-text">Fast iteration, measurable improvements, clean architecture.</div>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon" aria-hidden="true"><i data-lucide="brain"></i></div>
+                <div>
+                  <div class="feature-title">AI curiosity</div>
+                  <div class="feature-text">Integrating AI APIs to automate, summarize, and personalize.</div>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon" aria-hidden="true"><i data-lucide="users"></i></div>
+                <div>
+                  <div class="feature-title">Teamwork</div>
+                  <div class="feature-text">Clear communication, feedback loops, agile collaboration.</div>
+                </div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon" aria-hidden="true"><i data-lucide="target"></i></div>
+                <div>
+                  <div class="feature-title">Impact-driven</div>
+                  <div class="feature-text">Building solutions for real people and real constraints.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 glass p-5 sm:p-6">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <div class="text-sm font-semibold text-white">Current focus</div>
+                  <div class="mt-1 text-sm text-white/70">Full stack apps · AI features · UX polish</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 shadow-glow">
+                  <div class="font-mono text-xs text-white/70">BUILD</div>
+                  <div class="mt-1 font-mono text-lg font-semibold text-neon-blue">v2026</div>
+                </div>
+              </div>
+              <div class="mt-4 grid gap-2">
+                <div class="telemetry">
+                  <span class="telemetry-k">JavaScript</span>
+                  <span class="telemetry-bar"><span style="width: 90%"></span></span>
+                  <span class="telemetry-v">90%</span>
+                </div>
+                <div class="telemetry">
+                  <span class="telemetry-k">React</span>
+                  <span class="telemetry-bar"><span class="t2" style="width: 85%"></span></span>
+                  <span class="telemetry-v">85%</span>
+                </div>
+                <div class="telemetry">
+                  <span class="telemetry-k">Python</span>
+                  <span class="telemetry-bar"><span class="t3" style="width: 80%"></span></span>
+                  <span class="telemetry-v">80%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section ma-section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="ma-section__head reveal">
+            <span class="ma-section__num">02.</span>
+            <h2 class="ma-section__title">SKILLS</h2>
+            <p class="section-kicker ma-section__kicker">A practical toolbox for building modern products.</p>
+          </div>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div class="skill-card reveal">
+              <div class="skill-title">Frontend</div>
+              <div class="skill-list">
+                <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span
+                ><span class="chip">React</span><span class="chip">Tailwind</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">Backend</div>
+              <div class="skill-list">
+                <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">REST APIs</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">Databases</div>
+              <div class="skill-list">
+                <span class="chip">MongoDB</span><span class="chip">MySQL</span><span class="chip">Firebase</span
+                ><span class="chip">PostgreSQL</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">Programming</div>
+              <div class="skill-list">
+                <span class="chip">JavaScript</span><span class="chip">Java</span><span class="chip">Python</span
+                ><span class="chip">C++ (basic)</span><span class="chip">PHP (basic)</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">Tools</div>
+              <div class="skill-list">
+                <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span
+                ><span class="chip">Android Studio</span><span class="chip">Postman</span>
+              </div>
+            </div>
+            <div class="skill-card reveal">
+              <div class="skill-title">Concepts</div>
+              <div class="skill-list">
+                <span class="chip">UI/UX Design</span><span class="chip">Agile</span><span class="chip">Software Architecture</span
+                ><span class="chip">Data Structures</span><span class="chip">Networking basics</span>
+              </div>
+            </div>
+            <div class="skill-card reveal md:col-span-2 xl:col-span-3">
+              <div class="skill-title">Emerging skills</div>
+              <div class="skill-list">
+                <span class="chip chip--neon">AI APIs</span><span class="chip chip--neon">Data Analytics</span
+                ><span class="chip chip--neon">Automation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section ma-section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="ma-section__head reveal">
+            <span class="ma-section__num">03.</span>
+            <h2 class="ma-section__title">PROJECTS</h2>
+            <p class="section-kicker ma-section__kicker">Modern builds with real-world thinking and clean UX.</p>
+          </div>
+
+          <div class="mt-8 grid gap-4 lg:grid-cols-2">
+            <article class="project reveal">
+              <div class="project-media">
+                <img src="./assets/draftly.svg" alt="Draftly project preview" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3 class="project-title">Draftly — Smart AI Note Taking Application</h3>
+                  <div class="project-links">
+                    <a class="iconbtn" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer" aria-label="View GitHub">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                        <path
+                          d="M12 2c5.52 0 10 4.58 10 10.23 0 4.52-2.87 8.35-6.85 9.7-.5.1-.68-.23-.68-.5v-1.78c2.8.62 3.39-1.2 3.39-1.2.46-1.2 1.12-1.52 1.12-1.52.92-.65-.07-.64-.07-.64-1.02.07-1.56 1.06-1.56 1.06-.9 1.57-2.36 1.12-2.94.86-.09-.67-.35-1.12-.63-1.37 2.23-.26 4.58-1.14 4.58-5.1 0-1.13-.39-2.05-1.03-2.77.1-.26.45-1.31-.1-2.73 0 0-.84-.28-2.75 1.06-.8-.23-1.65-.34-2.5-.34-.85 0-1.7.12-2.5.34-1.9-1.34-2.75-1.06-2.75-1.06-.55 1.42-.2 2.47-.1 2.73-.64.72-1.03 1.64-1.03 2.77 0 3.95 2.34 4.84 4.57 5.1-.23.2-.44.55-.52 1.05-.47.22-1.67.62-2.41-.74 0 0-.44-.81-1.27-.87 0 0-.81-.01-.06.52 0 0 .54.26.92 1.23 0 0 .48 1.52 2.79 1v1.82c0 .27-.18.6-.68.5C4.86 20.58 2 16.75 2 12.23 2 6.58 6.48 2 12 2Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                    <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  An AI-powered notes workspace that feels fast and focused — built for students and creators who want clarity and
+                  action.
+                </p>
+                <ul class="project-feats">
+                  <li>AI tagging + task detection</li>
+                  <li>JWT authentication</li>
+                  <li>Export formats (PDF, MD, TXT)</li>
+                  <li>Dark mode + responsive UI</li>
+                </ul>
+                <div class="project-badges">
+                  <span class="badge">React</span><span class="badge">Node</span><span class="badge">Express</span
+                  ><span class="badge">MongoDB</span><span class="badge badge--neon">AI APIs</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project-media">
+                <img src="./assets/zimbuy.svg" alt="ZIMBUY project preview" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3 class="project-title">ZIMBUY — Marketplace Platform</h3>
+                  <div class="project-links">
+                    <a class="iconbtn" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer" aria-label="View GitHub">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                        <path
+                          d="M12 2c5.52 0 10 4.58 10 10.23 0 4.52-2.87 8.35-6.85 9.7-.5.1-.68-.23-.68-.5v-1.78c2.8.62 3.39-1.2 3.39-1.2.46-1.2 1.12-1.52 1.12-1.52.92-.65-.07-.64-.07-.64-1.02.07-1.56 1.06-1.56 1.06-.9 1.57-2.36 1.12-2.94.86-.09-.67-.35-1.12-.63-1.37 2.23-.26 4.58-1.14 4.58-5.1 0-1.13-.39-2.05-1.03-2.77.1-.26.45-1.31-.1-2.73 0 0-.84-.28-2.75 1.06-.8-.23-1.65-.34-2.5-.34-.85 0-1.7.12-2.5.34-1.9-1.34-2.75-1.06-2.75-1.06-.55 1.42-.2 2.47-.1 2.73-.64.72-1.03 1.64-1.03 2.77 0 3.95 2.34 4.84 4.57 5.1-.23.2-.44.55-.52 1.05-.47.22-1.67.62-2.41-.74 0 0-.44-.81-1.27-.87 0 0-.81-.01-.06.52 0 0 .54.26.92 1.23 0 0 .48 1.52 2.79 1v1.82c0 .27-.18.6-.68.5C4.86 20.58 2 16.75 2 12.23 2 6.58 6.48 2 12 2Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                    <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  A Zimbabwe-first marketplace concept with scalable product architecture and a clear path to payments, messaging,
+                  and trust features.
+                </p>
+                <ul class="project-feats">
+                  <li>Buyer–seller system</li>
+                  <li>Product catalog</li>
+                  <li>Messaging concept + payments idea</li>
+                  <li>Scalable system vision</li>
+                </ul>
+                <div class="project-badges">
+                  <span class="badge">React</span><span class="badge">REST APIs</span><span class="badge">Firebase</span
+                  ><span class="badge">UI/UX</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project-media">
+                <img src="./assets/ecommerce.svg" alt="E-commerce project preview" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3 class="project-title">E-commerce Web Application</h3>
+                  <div class="project-links">
+                    <a class="iconbtn" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer" aria-label="View GitHub">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                        <path
+                          d="M12 2c5.52 0 10 4.58 10 10.23 0 4.52-2.87 8.35-6.85 9.7-.5.1-.68-.23-.68-.5v-1.78c2.8.62 3.39-1.2 3.39-1.2.46-1.2 1.12-1.52 1.12-1.52.92-.65-.07-.64-.07-.64-1.02.07-1.56 1.06-1.56 1.06-.9 1.57-2.36 1.12-2.94.86-.09-.67-.35-1.12-.63-1.37 2.23-.26 4.58-1.14 4.58-5.1 0-1.13-.39-2.05-1.03-2.77.1-.26.45-1.31-.1-2.73 0 0-.84-.28-2.75 1.06-.8-.23-1.65-.34-2.5-.34-.85 0-1.7.12-2.5.34-1.9-1.34-2.75-1.06-2.75-1.06-.55 1.42-.2 2.47-.1 2.73-.64.72-1.03 1.64-1.03 2.77 0 3.95 2.34 4.84 4.57 5.1-.23.2-.44.55-.52 1.05-.47.22-1.67.62-2.41-.74 0 0-.44-.81-1.27-.87 0 0-.81-.01-.06.52 0 0 .54.26.92 1.23 0 0 .48 1.52 2.79 1v1.82c0 .27-.18.6-.68.5C4.86 20.58 2 16.75 2 12.23 2 6.58 6.48 2 12 2Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                    <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  A complete shopping experience with authentication, cart flow, and product management — designed with clean
+                  layout and fast interactions.
+                </p>
+                <ul class="project-feats">
+                  <li>Authentication</li>
+                  <li>Shopping cart</li>
+                  <li>Product management</li>
+                </ul>
+                <div class="project-badges">
+                  <span class="badge">React</span><span class="badge">Node</span><span class="badge">PostgreSQL</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project-media">
+                <img src="./assets/f1.svg" alt="Formula 1 telemetry dashboard preview" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3 class="project-title">Formula 1 Telemetry Dashboard Simulation (Concept)</h3>
+                  <div class="project-links">
+                    <a class="iconbtn" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer" aria-label="View GitHub">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                        <path
+                          d="M12 2c5.52 0 10 4.58 10 10.23 0 4.52-2.87 8.35-6.85 9.7-.5.1-.68-.23-.68-.5v-1.78c2.8.62 3.39-1.2 3.39-1.2.46-1.2 1.12-1.52 1.12-1.52.92-.65-.07-.64-.07-.64-1.02.07-1.56 1.06-1.56 1.06-.9 1.57-2.36 1.12-2.94.86-.09-.67-.35-1.12-.63-1.37 2.23-.26 4.58-1.14 4.58-5.1 0-1.13-.39-2.05-1.03-2.77.1-.26.45-1.31-.1-2.73 0 0-.84-.28-2.75 1.06-.8-.23-1.65-.34-2.5-.34-.85 0-1.7.12-2.5.34-1.9-1.34-2.75-1.06-2.75-1.06-.55 1.42-.2 2.47-.1 2.73-.64.72-1.03 1.64-1.03 2.77 0 3.95 2.34 4.84 4.57 5.1-.23.2-.44.55-.52 1.05-.47.22-1.67.62-2.41-.74 0 0-.44-.81-1.27-.87 0 0-.81-.01-.06.52 0 0 .54.26.92 1.23 0 0 .48 1.52 2.79 1v1.82c0 .27-.18.6-.68.5C4.86 20.58 2 16.75 2 12.23 2 6.58 6.48 2 12 2Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                    <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  A racing dashboard UI concept focused on clarity and speed — built like a performance engineer’s interface.
+                </p>
+                <ul class="project-feats">
+                  <li>Lap analytics charts (UI)</li>
+                  <li>Performance comparison layout</li>
+                  <li>Racing dashboard theme</li>
+                </ul>
+                <div class="project-badges">
+                  <span class="badge">Data Viz</span><span class="badge">UI/UX</span><span class="badge badge--neon">Performance</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project-media">
+                <img src="./assets/future-ai.svg" alt="Future AI project preview" loading="lazy" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3 class="project-title">Future AI Project Placeholder</h3>
+                  <div class="project-links">
+                    <a class="iconbtn" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer" aria-label="View GitHub">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                        <path
+                          d="M12 2c5.52 0 10 4.58 10 10.23 0 4.52-2.87 8.35-6.85 9.7-.5.1-.68-.23-.68-.5v-1.78c2.8.62 3.39-1.2 3.39-1.2.46-1.2 1.12-1.52 1.12-1.52.92-.65-.07-.64-.07-.64-1.02.07-1.56 1.06-1.56 1.06-.9 1.57-2.36 1.12-2.94.86-.09-.67-.35-1.12-.63-1.37 2.23-.26 4.58-1.14 4.58-5.1 0-1.13-.39-2.05-1.03-2.77.1-.26.45-1.31-.1-2.73 0 0-.84-.28-2.75 1.06-.8-.23-1.65-.34-2.5-.34-.85 0-1.7.12-2.5.34-1.9-1.34-2.75-1.06-2.75-1.06-.55 1.42-.2 2.47-.1 2.73-.64.72-1.03 1.64-1.03 2.77 0 3.95 2.34 4.84 4.57 5.1-.23.2-.44.55-.52 1.05-.47.22-1.67.62-2.41-.74 0 0-.44-.81-1.27-.87 0 0-.81-.01-.06.52 0 0 .54.26.92 1.23 0 0 .48 1.52 2.79 1v1.82c0 .27-.18.6-.68.5C4.86 20.58 2 16.75 2 12.23 2 6.58 6.48 2 12 2Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </a>
+                    <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  A space reserved for the next AI build — think chatbot, summarizer, or smart assistant tailored to real needs.
+                </p>
+                <ul class="project-feats">
+                  <li>Chatbot</li>
+                  <li>Summarizer</li>
+                  <li>Smart assistant workflows</li>
+                </ul>
+                <div class="project-badges">
+                  <span class="badge badge--neon">AI</span><span class="badge">Automation</span><span class="badge">Analytics</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="reveal mt-8 glass p-5 sm:p-6">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div class="text-sm font-semibold text-white">Want to see more?</div>
+                <div class="mt-1 text-sm text-white/70">
+                  I can share additional coursework, prototypes, and GitHub repositories on request.
+                </div>
+              </div>
+              <a class="btn btn-primary" href="./contact.html"><span>Let’s connect</span><span class="btn-arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section ma-section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="ma-section__head reveal">
+            <span class="ma-section__num">04.</span>
+            <h2 class="ma-section__title">EXPERIENCE</h2>
+            <p class="section-kicker ma-section__kicker">Real work, real users, real iteration.</p>
+          </div>
+
+          <div class="mt-8 grid gap-4 lg:grid-cols-2">
+            <div class="glass reveal p-5 sm:p-6">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-sm font-semibold text-white">Developer · Sumani Web Solutions</div>
+                  <div class="mt-1 text-sm text-white/70">Responsive websites for local businesses</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70">Freelance</div>
+              </div>
+              <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-white/80">
+                <li>Built clean, mobile-first websites with modern layouts and performance-focused UI.</li>
+                <li>Learned real-world workflows: scoping, iteration, feedback, and deploying updates.</li>
+                <li>Improved communication skills by translating business goals into practical features.</li>
+              </ul>
+            </div>
+
+            <div class="glass reveal p-5 sm:p-6">
+              <div class="text-sm font-semibold text-white">How I work</div>
+              <div class="mt-3 grid gap-3">
+                <div class="work-row">
+                  <span class="work-k">Plan</span>
+                  <span class="work-v">Understand the problem and define outcomes</span>
+                </div>
+                <div class="work-row">
+                  <span class="work-k">Build</span>
+                  <span class="work-v">Ship incrementally, keep UX clean</span>
+                </div>
+                <div class="work-row">
+                  <span class="work-k">Measure</span>
+                  <span class="work-v">Performance, reliability, usability</span>
+                </div>
+                <div class="work-row">
+                  <span class="work-k">Improve</span>
+                  <span class="work-v">Iterate like a racing engineer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERESTS -->
+      <section id="interests" class="section ma-section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="ma-section__head reveal">
+            <span class="ma-section__num">05.</span>
+            <h2 class="ma-section__title">INTERESTS</h2>
+            <p class="section-kicker ma-section__kicker">The ideas that power my motivation and creativity.</p>
+          </div>
+
+          <div class="interests-grid mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="interest reveal">
+              <div class="interest-top">
+                <div class="interest-ico" aria-hidden="true"><i data-lucide="brain"></i></div>
+                <div class="interest-title">Artificial Intelligence Innovation</div>
+              </div>
+              <div class="interest-text">Exploring AI-assisted workflows, smart products, and automation.</div>
+            </div>
+            <div class="interest reveal">
+              <div class="interest-top">
+                <div class="interest-ico" aria-hidden="true"><i data-lucide="zap"></i></div>
+                <div class="interest-title">Electric Vehicles & Automotive Technology</div>
+              </div>
+              <div class="interest-text">Future mobility, efficiency, and software-defined vehicles.</div>
+            </div>
+            <div class="interest reveal">
+              <div class="interest-top">
+                <div class="interest-ico" aria-hidden="true"><i data-lucide="gauge"></i></div>
+                <div class="interest-title">Formula 1 Strategy & Engineering</div>
+              </div>
+              <div class="interest-text">Telemetry, data-driven decisions, performance systems.</div>
+            </div>
+            <div class="interest reveal">
+              <div class="interest-top">
+                <div class="interest-ico" aria-hidden="true"><i data-lucide="palette"></i></div>
+                <div class="interest-title">Anime Storytelling & Creative Design</div>
+              </div>
+              <div class="interest-text">Strong visuals, mood, and narrative-inspired UI.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section ma-section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="ma-section__head reveal">
+            <span class="ma-section__num">06.</span>
+            <h2 class="ma-section__title">CONTACT</h2>
+            <p class="section-kicker ma-section__kicker">Let’s talk internships, ideas, or a project collaboration.</p>
+          </div>
+
+          <div class="mt-8 grid gap-4 lg:grid-cols-[0.9fr,1.1fr]">
+            <div class="glass reveal p-5 sm:p-6">
+              <div class="grid gap-3 text-sm text-white/80">
+                <div class="contact-row">
+                  <span class="contact-k">Phone</span>
+                  <a class="contact-v" href="tel:+263781560459">0781560459</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-k">Email</span>
+                  <a class="contact-v" href="mailto:tavongasumani@gmail.com">tavongasumani@gmail.com</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-k">LinkedIn</span>
+                  <a class="contact-v" href="https://www.linkedin.com/in/tavonga-sumani" target="_blank" rel="noreferrer">linkedin.com/in/tavonga-sumani</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-k">Location</span>
+                  <span class="contact-v">1571 Woodlands Park, Gweru</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-k">GitHub</span>
+                  <a class="contact-v" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer">github.com/TavongaSumani</a>
+                </div>
+              </div>
+
+              <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div class="text-xs font-semibold text-white/70">Recruiter note</div>
+                <div class="mt-2 text-sm text-white/80">
+                  I’m actively looking for internships in ICT, AI, Digital Transformation, Software Development, Automotive Technology,
+                  and innovative tech teams.
+                </div>
+              </div>
+            </div>
+
+            <div class="glass reveal p-5 sm:p-6">
+              <form id="contactForm" class="grid gap-4" novalidate>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <label class="field">
+                    <span class="field-label">Name</span>
+                    <input class="input" name="name" autocomplete="name" required placeholder="Your name" />
+                    <span class="field-error" data-error-for="name"></span>
+                  </label>
+                  <label class="field">
+                    <span class="field-label">Email</span>
+                    <input class="input" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+                    <span class="field-error" data-error-for="email"></span>
+                  </label>
+                </div>
+                <label class="field">
+                  <span class="field-label">Subject</span>
+                  <input class="input" name="subject" required placeholder="Internship opportunity / Collaboration / Question" />
+                  <span class="field-error" data-error-for="subject"></span>
+                </label>
+                <label class="field">
+                  <span class="field-label">Message</span>
+                  <textarea class="input min-h-[140px] resize-y" name="message" required placeholder="Tell me what you’re building…"></textarea>
+                  <span class="field-error" data-error-for="message"></span>
+                </label>
+
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <button class="btn btn-primary" type="submit">
+                    <span>Send Message</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                  </button>
+                  <div class="text-xs text-white/60">
+                    Form opens your email client (no backend required).
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="border-t border-white/5 bg-ink-900/40 parallax-footer">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-white/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>© <span id="year"></span> Tavonga Sumani. Built with performance + taste.</div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a class="footerlink" href="./index.html">Top</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./projects.html">Projects</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-label="Draftly project thumbnail">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6BE4FF" stop-opacity=".22"/>
+      <stop offset=".55" stop-color="#A78BFA" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#FF4FD8" stop-opacity=".14"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#6BE4FF" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#64FFB7" stop-opacity=".78"/>
+    </linearGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="650" fill="#090A12"/>
+  <rect x="40" y="40" width="1120" height="570" rx="28" fill="url(#g)" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <g opacity=".6">
+    <path d="M-150 560 L500 120" stroke="rgba(107,228,255,.18)" stroke-width="22"/>
+    <path d="M-60 620 L590 180" stroke="rgba(167,139,250,.16)" stroke-width="14"/>
+    <path d="M20 680 L670 240" stroke="rgba(255,79,216,.12)" stroke-width="10"/>
+  </g>
+  <circle cx="980" cy="170" r="140" fill="rgba(107,228,255,.14)" filter="url(#blur)"/>
+  <circle cx="860" cy="310" r="120" fill="rgba(167,139,250,.12)" filter="url(#blur)"/>
+  <circle cx="1040" cy="360" r="110" fill="rgba(255,79,216,.10)" filter="url(#blur)"/>
+
+  <g transform="translate(92 92)">
+    <text x="0" y="40" fill="rgba(255,255,255,.92)" font-family="Inter,Segoe UI,Arial" font-size="34" font-weight="800">
+      Draftly
+    </text>
+    <text x="0" y="74" fill="rgba(255,255,255,.68)" font-family="Inter,Segoe UI,Arial" font-size="16" font-weight="600">
+      Smart AI Note Taking � Dark mode � Export � JWT
+    </text>
+
+    <g transform="translate(0 115)">
+      <rect x="0" y="0" width="520" height="285" rx="22" fill="rgba(0,0,0,.26)" stroke="rgba(255,255,255,.12)"/>
+      <rect x="26" y="24" width="160" height="14" rx="7" fill="rgba(255,255,255,.14)"/>
+      <rect x="26" y="55" width="340" height="10" rx="5" fill="rgba(255,255,255,.10)"/>
+      <rect x="26" y="78" width="300" height="10" rx="5" fill="rgba(255,255,255,.10)"/>
+      <rect x="26" y="101" width="260" height="10" rx="5" fill="rgba(255,255,255,.10)"/>
+
+      <rect x="26" y="145" width="468" height="12" rx="6" fill="rgba(255,255,255,.09)"/>
+      <rect x="26" y="170" width="420" height="12" rx="6" fill="rgba(255,255,255,.09)"/>
+
+      <g transform="translate(26 218)">
+        <rect x="0" y="0" width="220" height="44" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>
+        <text x="18" y="28" fill="rgba(255,255,255,.78)" font-family="JetBrains Mono,Consolas,monospace" font-size="14" font-weight="600">
+          AI TAGGING
+        </text>
+      </g>
+      <g transform="translate(274 218)">
+        <rect x="0" y="0" width="220" height="44" rx="14" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>
+        <text x="18" y="28" fill="rgba(255,255,255,.78)" font-family="JetBrains Mono,Consolas,monospace" font-size="14" font-weight="600">
+          EXPORT
+        </text>
+      </g>
+    </g>
+
+    <g transform="translate(580 140)">
+      <text x="0" y="0" fill="rgba(255,255,255,.62)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="700" letter-spacing=".14em">
+        PERFORMANCE
+      </text>
+      <rect x="0" y="18" width="420" height="14" rx="7" fill="rgba(255,255,255,.08)"/>
+      <rect x="0" y="18" width="330" height="14" rx="7" fill="url(#bar)"/>
+      <rect x="0" y="46" width="420" height="14" rx="7" fill="rgba(255,255,255,.08)"/>
+      <rect x="0" y="46" width="372" height="14" rx="7" fill="rgba(167,139,250,.75)"/>
+      <rect x="0" y="74" width="420" height="14" rx="7" fill="rgba(255,255,255,.08)"/>
+      <rect x="0" y="74" width="398" height="14" rx="7" fill="rgba(255,79,216,.65)"/>
+    </g>
+  </g>
+</svg>

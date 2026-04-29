@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Projects by Tavonga Sumani." />
+    <meta name="theme-color" content="#000000" />
+    <title>Projects | Tavonga Sumani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="site-body h-full antialiased selection:bg-[#00FFBB]/25 selection:text-black">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden below-hero-bg">
+      <div class="bg-grid opacity-20"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="ma-header hero-header">
+      <div class="ma-header__bar mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5">
+        <div class="flex w-full flex-wrap items-center justify-between gap-3">
+          <div class="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+            <a class="ma-brand font-display" href="./index.html">Tavonga Sumani</a>
+            <span class="ma-badge">Available for work</span>
+          </div>
+          <div class="ma-header__actions hidden flex-wrap items-center gap-4 text-sm font-medium md:flex">
+            <a class="ma-header__link" href="./contact.html">Contact</a>
+            <span class="ma-header__clock text-white/55" id="headerClock" aria-live="polite"></span>
+            <nav class="hero-nav-pill font-display flex items-center" aria-label="Primary navigation">
+              <a class="hero-nav-link" href="./index.html">Home</a>
+              <a class="hero-nav-link" href="./about.html">Profile</a>
+              <a class="hero-nav-link is-active" href="./projects.html">Blog</a>
+              <button type="button" id="themeToggle" class="hero-theme-btn" aria-label="Switch to light theme" title="Toggle theme">
+                <svg class="hero-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-24">
+      <section id="projects" class="section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="reveal">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-kicker">Modern builds with real-world thinking and clean UX.</p>
+          </div>
+
+          <div class="mt-8 grid gap-4 lg:grid-cols-2">
+            <article class="project reveal">
+              <div class="project-media"><img src="./assets/draftly.svg" alt="Draftly project preview" loading="lazy" /></div>
+              <div class="project-body">
+                <h3 class="project-title">Draftly — Smart AI Note Taking Application</h3>
+                <p class="project-desc">An AI-powered notes workspace for students and creators.</p>
+                <div class="project-badges"><span class="badge">React</span><span class="badge">Node</span><span class="badge badge--neon">AI APIs</span></div>
+              </div>
+            </article>
+            <article class="project reveal">
+              <div class="project-media"><img src="./assets/zimbuy.svg" alt="ZIMBUY project preview" loading="lazy" /></div>
+              <div class="project-body">
+                <h3 class="project-title">ZIMBUY — Marketplace Platform</h3>
+                <p class="project-desc">A Zimbabwe-first marketplace concept with scalable architecture.</p>
+                <div class="project-badges"><span class="badge">React</span><span class="badge">REST APIs</span><span class="badge">Firebase</span></div>
+              </div>
+            </article>
+            <article class="project reveal">
+              <div class="project-media"><img src="./assets/ecommerce.svg" alt="E-commerce project preview" loading="lazy" /></div>
+              <div class="project-body">
+                <h3 class="project-title">E-commerce Web Application</h3>
+                <p class="project-desc">A complete shopping flow with auth, cart, and product management.</p>
+                <div class="project-badges"><span class="badge">React</span><span class="badge">Node</span><span class="badge">PostgreSQL</span></div>
+              </div>
+            </article>
+            <article class="project reveal">
+              <div class="project-media"><img src="./assets/f1.svg" alt="Formula 1 telemetry dashboard preview" loading="lazy" /></div>
+              <div class="project-body">
+                <h3 class="project-title">Formula 1 Telemetry Dashboard (Concept)</h3>
+                <p class="project-desc">A racing dashboard UI concept focused on clarity and speed.</p>
+                <div class="project-badges"><span class="badge">Data Viz</span><span class="badge">UI/UX</span><span class="badge badge--neon">Performance</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="border-t border-white/5 bg-ink-900/40 parallax-footer">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-white/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>© <span id="year"></span> Tavonga Sumani. Built with performance + taste.</div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a class="footerlink" href="./index.html">Top</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./about.html">Profile</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

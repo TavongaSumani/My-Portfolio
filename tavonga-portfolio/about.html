@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Tavonga Sumani - profile, skills, experience, and interests." />
+    <meta name="theme-color" content="#000000" />
+    <title>About | Tavonga Sumani</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="site-body h-full antialiased selection:bg-[#00FFBB]/25 selection:text-black">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-black/70 focus:px-4 focus:py-3 focus:text-white"
+      >Skip to content</a
+    >
+
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden below-hero-bg">
+      <div class="bg-grid opacity-20"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="ma-header hero-header">
+      <div class="ma-header__bar mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5">
+        <div class="flex w-full flex-wrap items-center justify-between gap-3">
+          <div class="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+            <a class="ma-brand font-display" href="./index.html">Tavonga Sumani</a>
+            <span class="ma-badge">Available for work</span>
+          </div>
+          <div class="ma-header__actions hidden flex-wrap items-center gap-4 text-sm font-medium md:flex">
+            <a class="ma-header__link" href="./contact.html">Contact</a>
+            <span class="ma-header__clock text-white/55" id="headerClock" aria-live="polite"></span>
+            <nav class="hero-nav-pill font-display flex items-center" aria-label="Primary navigation">
+              <a class="hero-nav-link" href="./index.html">Home</a>
+              <a class="hero-nav-link is-active" href="./about.html">Profile</a>
+              <a class="hero-nav-link" href="./projects.html">Blog</a>
+              <button type="button" id="themeToggle" class="hero-theme-btn" aria-label="Switch to light theme" title="Toggle theme">
+                <svg class="hero-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-24">
+      <section id="about" class="section">
+        <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr,1.1fr]">
+          <div class="reveal">
+            <h2 class="section-title">About</h2>
+            <p class="section-kicker">A story built on curiosity, performance, and creativity.</p>
+            <div class="glass p-5 sm:p-6">
+              <p class="leading-relaxed text-white/85">
+                I’m a passionate software engineering student who loves turning ideas into reliable, user-friendly systems. My
+                interests sit at the intersection of innovation, AI, and automotive technology.
+              </p>
+              <p class="mt-4 leading-relaxed text-white/80">
+                I enjoy problem solving, learning fast, and shipping meaningful software with clean UX and practical performance.
+              </p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="feature">
+                <div class="feature-icon feature-icon--photo">
+                  <img src="./assets/features/performance.jpg" alt="Data and metrics on a dashboard" width="120" height="120" loading="lazy" decoding="async" />
+                </div>
+                <div><div class="feature-title">Performance mindset</div><div class="feature-text">Fast iteration, clean architecture.</div></div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon feature-icon--photo">
+                  <img src="./assets/features/ai.jpg" alt="Abstract AI and technology visualization" width="120" height="120" loading="lazy" decoding="async" />
+                </div>
+                <div><div class="feature-title">AI curiosity</div><div class="feature-text">Automate, summarize, personalize.</div></div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon feature-icon--photo">
+                  <img src="./assets/features/teamwork.jpg" alt="Team collaborating together" width="120" height="120" loading="lazy" decoding="async" />
+                </div>
+                <div><div class="feature-title">Teamwork</div><div class="feature-text">Clear communication and feedback loops.</div></div>
+              </div>
+              <div class="feature">
+                <div class="feature-icon feature-icon--photo">
+                  <img src="./assets/features/impact.jpg" alt="Planning and strategy on a whiteboard" width="120" height="120" loading="lazy" decoding="async" />
+                </div>
+                <div><div class="feature-title">Impact-driven</div><div class="feature-text">Build for real users and needs.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="reveal">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-kicker">A practical toolbox for building modern products.</p>
+          </div>
+          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            <div class="skill-card reveal"><div class="skill-title">Frontend</div><div class="skill-list"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">React</span></div></div>
+            <div class="skill-card reveal"><div class="skill-title">Backend</div><div class="skill-list"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">REST APIs</span></div></div>
+            <div class="skill-card reveal"><div class="skill-title">Databases</div><div class="skill-list"><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">Firebase</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="reveal">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-kicker">Real work, real users, real iteration.</p>
+          </div>
+          <div class="mt-8 grid gap-4 lg:grid-cols-2">
+            <div class="glass reveal p-5 sm:p-6">
+              <div class="text-sm font-semibold text-white">Developer · Sumani Web Solutions</div>
+              <div class="mt-1 text-sm text-white/75">Responsive websites for local businesses.</div>
+            </div>
+            <div class="glass reveal p-5 sm:p-6">
+              <div class="text-sm font-semibold text-white">How I work</div>
+              <div class="mt-3 grid gap-3">
+                <div class="work-row"><span class="work-k">Plan</span><span class="work-v">Understand outcomes first</span></div>
+                <div class="work-row"><span class="work-k">Build</span><span class="work-v">Ship in small, high-quality steps</span></div>
+                <div class="work-row"><span class="work-k">Improve</span><span class="work-v">Measure and iterate</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="interests" class="section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="reveal">
+            <h2 class="section-title">Interests</h2>
+            <p class="section-kicker">The ideas that power my motivation and creativity.</p>
+          </div>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="interest reveal"><div class="interest-title">Artificial Intelligence</div><div class="interest-text">Exploring AI-assisted workflows and products.</div></div>
+            <div class="interest reveal"><div class="interest-title">Automotive Tech</div><div class="interest-text">Future mobility and efficient systems.</div></div>
+            <div class="interest reveal"><div class="interest-title">Formula 1 Engineering</div><div class="interest-text">Telemetry and data-driven strategy.</div></div>
+            <div class="interest reveal"><div class="interest-title">Creative Design</div><div class="interest-text">Narrative and mood-driven UI design.</div></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="border-t border-white/5 bg-ink-900/40 parallax-footer">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-white/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>© <span id="year"></span> Tavonga Sumani. Built with performance + taste.</div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a class="footerlink" href="./index.html">Top</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./projects.html">Projects</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

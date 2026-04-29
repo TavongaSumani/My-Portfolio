@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-label="Formula 1 telemetry dashboard thumbnail">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#05060A"/>
+      <stop offset=".6" stop-color="#0E1020"/>
+      <stop offset="1" stop-color="#141737"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#6BE4FF" stop-opacity=".9"/>
+      <stop offset=".6" stop-color="#A78BFA" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#FF4FD8" stop-opacity=".8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="650" fill="url(#bg)"/>
+  <g opacity=".20">
+    <path d="M-40 520 L1240 100" stroke="#6BE4FF" stroke-width="18"/>
+    <path d="M-40 580 L1240 160" stroke="#64FFB7" stroke-width="10"/>
+  </g>
+  <rect x="44" y="44" width="1112" height="562" rx="28" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+
+  <g transform="translate(92 102)">
+    <text x="0" y="0" fill="rgba(255,255,255,.92)" font-family="Inter,Segoe UI,Arial" font-size="34" font-weight="800">
+      F1 Telemetry Dashboard (Concept)
+    </text>
+    <text x="0" y="30" fill="rgba(255,255,255,.68)" font-family="Inter,Segoe UI,Arial" font-size="16" font-weight="600">
+      Lap analytics � Performance comparison � Racing UI
+    </text>
+
+    <g transform="translate(0 76)">
+      <rect x="0" y="0" width="1016" height="424" rx="24" fill="rgba(0,0,0,.22)" stroke="rgba(255,255,255,.10)"/>
+
+      <g transform="translate(22 22)">
+        <rect x="0" y="0" width="972" height="62" rx="20" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.08)"/>
+        <text x="18" y="24" fill="rgba(255,255,255,.65)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800" letter-spacing=".14em">
+          SESSION
+        </text>
+        <text x="18" y="46" fill="rgba(255,255,255,.9)" font-family="Inter,Segoe UI,Arial" font-size="16" font-weight="800">
+          Qualifying � Lap 12
+        </text>
+        <rect x="720" y="18" width="230" height="26" rx="13" fill="rgba(107,228,255,.10)" stroke="rgba(107,228,255,.24)"/>
+        <text x="740" y="37" fill="rgba(255,255,255,.86)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800">
+          PUSH LAP
+        </text>
+      </g>
+
+      <g transform="translate(22 108)">
+        <rect x="0" y="0" width="620" height="294" rx="22" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)"/>
+        <text x="18" y="28" fill="rgba(255,255,255,.72)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800" letter-spacing=".12em">
+          LAP ANALYTICS
+        </text>
+        <path d="M24 248 C120 210, 170 235, 240 176 C320 106, 410 168, 520 126 C570 106, 590 120, 600 92"
+              fill="none" stroke="url(#accent)" stroke-width="4"/>
+        <g opacity=".45">
+          <path d="M24 248 L600 248" stroke="rgba(255,255,255,.10)" stroke-width="2"/>
+          <path d="M24 200 L600 200" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+          <path d="M24 152 L600 152" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+          <path d="M24 104 L600 104" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+        </g>
+        <g>
+          <rect x="18" y="44" width="180" height="18" rx="9" fill="rgba(255,255,255,.10)"/>
+          <rect x="210" y="44" width="150" height="18" rx="9" fill="rgba(255,255,255,.08)"/>
+          <rect x="372" y="44" width="210" height="18" rx="9" fill="rgba(255,255,255,.08)"/>
+        </g>
+      </g>
+
+      <g transform="translate(662 108)">
+        <rect x="0" y="0" width="332" height="294" rx="22" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)"/>
+        <text x="18" y="28" fill="rgba(255,255,255,.72)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800" letter-spacing=".12em">
+          COMPARISON
+        </text>
+
+        <g transform="translate(18 52)">
+          <text x="0" y="0" fill="rgba(255,255,255,.65)" font-family="Inter,Segoe UI,Arial" font-size="13" font-weight="700">Driver A</text>
+          <rect x="0" y="10" width="296" height="12" rx="6" fill="rgba(255,255,255,.08)"/>
+          <rect x="0" y="10" width="248" height="12" rx="6" fill="rgba(107,228,255,.75)"/>
+        </g>
+
+        <g transform="translate(18 98)">
+          <text x="0" y="0" fill="rgba(255,255,255,.65)" font-family="Inter,Segoe UI,Arial" font-size="13" font-weight="700">Driver B</text>
+          <rect x="0" y="10" width="296" height="12" rx="6" fill="rgba(255,255,255,.08)"/>
+          <rect x="0" y="10" width="224" height="12" rx="6" fill="rgba(167,139,250,.75)"/>
+        </g>
+
+        <g transform="translate(18 150)">
+          <rect x="0" y="0" width="296" height="92" rx="18" fill="rgba(0,0,0,.22)" stroke="rgba(255,255,255,.08)"/>
+          <text x="16" y="30" fill="rgba(255,255,255,.7)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800">SECTORS</text>
+          <rect x="16" y="44" width="264" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+          <rect x="16" y="62" width="214" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

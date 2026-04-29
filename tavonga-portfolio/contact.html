@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact Tavonga Sumani." />
+    <meta name="theme-color" content="#000000" />
+    <title>Contact | Tavonga Sumani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="site-body h-full antialiased selection:bg-[#00FFBB]/25 selection:text-black">
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden below-hero-bg">
+      <div class="bg-grid opacity-20"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="ma-header hero-header">
+      <div class="ma-header__bar mx-auto flex w-full max-w-6xl flex-col gap-4 px-4 pt-4 sm:px-6 sm:pt-5">
+        <div class="flex w-full flex-wrap items-center justify-between gap-3">
+          <div class="flex min-w-0 flex-wrap items-center gap-2 sm:gap-3">
+            <a class="ma-brand font-display" href="./index.html">Tavonga Sumani</a>
+            <span class="ma-badge">Available for work</span>
+          </div>
+          <div class="ma-header__actions hidden flex-wrap items-center gap-4 text-sm font-medium md:flex">
+            <a class="ma-header__link" href="./contact.html">Contact</a>
+            <span class="ma-header__clock text-white/55" id="headerClock" aria-live="polite"></span>
+            <nav class="hero-nav-pill font-display flex items-center" aria-label="Primary navigation">
+              <a class="hero-nav-link" href="./index.html">Home</a>
+              <a class="hero-nav-link" href="./about.html">Profile</a>
+              <a class="hero-nav-link" href="./projects.html">Blog</a>
+              <button type="button" id="themeToggle" class="hero-theme-btn" aria-label="Switch to light theme" title="Toggle theme">
+                <svg class="hero-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-24">
+      <section id="contact" class="section">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <div class="reveal">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-kicker">Let’s talk internships, ideas, or a project collaboration.</p>
+          </div>
+
+          <div class="mt-8 grid gap-4 lg:grid-cols-[0.9fr,1.1fr]">
+            <div class="glass reveal p-5 sm:p-6">
+              <div class="grid gap-3 text-sm text-white/80">
+                <div class="contact-row"><span class="contact-k">Phone</span><a class="contact-v" href="tel:+263781560459">0781560459</a></div>
+                <div class="contact-row"><span class="contact-k">Email</span><a class="contact-v" href="mailto:tavongasumani@gmail.com">tavongasumani@gmail.com</a></div>
+                <div class="contact-row"><span class="contact-k">LinkedIn</span><a class="contact-v" href="https://www.linkedin.com/in/tavonga-sumani" target="_blank" rel="noreferrer">linkedin.com/in/tavonga-sumani</a></div>
+                <div class="contact-row"><span class="contact-k">Location</span><span class="contact-v">1571 Woodlands Park, Gweru</span></div>
+                <div class="contact-row"><span class="contact-k">GitHub</span><a class="contact-v" href="https://github.com/TavongaSumani" target="_blank" rel="noreferrer">github.com/TavongaSumani</a></div>
+              </div>
+            </div>
+
+            <div class="glass reveal p-5 sm:p-6">
+              <form id="contactForm" class="grid gap-4" novalidate>
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <label class="field"><span class="field-label">Name</span><input class="input" name="name" autocomplete="name" required placeholder="Your name" /><span class="field-error" data-error-for="name"></span></label>
+                  <label class="field"><span class="field-label">Email</span><input class="input" name="email" type="email" autocomplete="email" required placeholder="you@email.com" /><span class="field-error" data-error-for="email"></span></label>
+                </div>
+                <label class="field"><span class="field-label">Subject</span><input class="input" name="subject" required placeholder="Internship opportunity / Collaboration / Question" /><span class="field-error" data-error-for="subject"></span></label>
+                <label class="field"><span class="field-label">Message</span><textarea class="input min-h-[140px] resize-y" name="message" required placeholder="Tell me what you’re building…"></textarea><span class="field-error" data-error-for="message"></span></label>
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <button class="btn btn-primary" type="submit"><span>Send Message</span><span class="btn-arrow" aria-hidden="true">→</span></button>
+                  <div class="text-xs text-white/60">Form opens your email client (no backend required).</div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="siteFooter" class="border-t border-white/5 bg-ink-900/40 parallax-footer">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-white/60 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>© <span id="year"></span> Tavonga Sumani. Built with performance + taste.</div>
+        <div class="flex flex-wrap items-center gap-2">
+          <a class="footerlink" href="./index.html">Top</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./about.html">Profile</a>
+          <span class="text-white/20">/</span>
+          <a class="footerlink" href="./projects.html">Projects</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

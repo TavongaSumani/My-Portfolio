@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-label="E-commerce project thumbnail">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#090A12"/>
+      <stop offset="1" stop-color="#141737"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#64FFB7" stop-opacity=".8"/>
+      <stop offset=".55" stop-color="#6BE4FF" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity=".85"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="650" fill="url(#g)"/>
+  <rect x="44" y="44" width="1112" height="562" rx="28" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+
+  <g opacity=".18">
+    <path d="M1200 120 L0 520" stroke="#6BE4FF" stroke-width="22"/>
+    <path d="M1200 170 L0 570" stroke="#FF4FD8" stroke-width="12"/>
+  </g>
+
+  <g transform="translate(92 102)">
+    <text x="0" y="0" fill="rgba(255,255,255,.92)" font-family="Inter,Segoe UI,Arial" font-size="34" font-weight="800">
+      E-commerce Web App
+    </text>
+    <text x="0" y="30" fill="rgba(255,255,255,.68)" font-family="Inter,Segoe UI,Arial" font-size="16" font-weight="600">
+      Auth � Cart � Product management � Clean UI
+    </text>
+
+    <g transform="translate(0 76)">
+      <rect x="0" y="0" width="1016" height="424" rx="24" fill="rgba(0,0,0,.22)" stroke="rgba(255,255,255,.10)"/>
+
+      <rect x="22" y="22" width="972" height="54" rx="18" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.08)"/>
+      <rect x="44" y="40" width="180" height="18" rx="9" fill="rgba(255,255,255,.12)"/>
+      <rect x="250" y="40" width="420" height="18" rx="9" fill="rgba(255,255,255,.08)"/>
+      <rect x="700" y="38" width="130" height="22" rx="11" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>
+      <rect x="850" y="38" width="120" height="22" rx="11" fill="rgba(107,228,255,.10)" stroke="rgba(107,228,255,.24)"/>
+
+      <g transform="translate(22 98)">
+        <rect x="0" y="0" width="652" height="304" rx="22" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)"/>
+        <g transform="translate(18 18)">
+          <rect x="0" y="0" width="190" height="122" rx="18" fill="rgba(0,0,0,.24)" stroke="rgba(255,255,255,.08)"/>
+          <rect x="212" y="0" width="190" height="122" rx="18" fill="rgba(0,0,0,.24)" stroke="rgba(255,255,255,.08)"/>
+          <rect x="424" y="0" width="190" height="122" rx="18" fill="rgba(0,0,0,.24)" stroke="rgba(255,255,255,.08)"/>
+          <rect x="0" y="144" width="614" height="12" rx="6" fill="rgba(255,255,255,.08)"/>
+          <rect x="0" y="168" width="520" height="12" rx="6" fill="rgba(255,255,255,.08)"/>
+          <rect x="0" y="192" width="580" height="12" rx="6" fill="rgba(255,255,255,.08)"/>
+          <rect x="0" y="224" width="270" height="38" rx="14" fill="url(#accent)" opacity=".4"/>
+          <text x="18" y="248" fill="rgba(255,255,255,.9)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800">
+            QUICK BUY
+          </text>
+        </g>
+      </g>
+
+      <g transform="translate(696 98)">
+        <rect x="0" y="0" width="298" height="304" rx="22" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)"/>
+        <rect x="18" y="18" width="160" height="14" rx="7" fill="rgba(255,255,255,.12)"/>
+        <rect x="18" y="50" width="262" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+        <rect x="18" y="72" width="236" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+        <rect x="18" y="104" width="262" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+        <rect x="18" y="126" width="210" height="10" rx="5" fill="rgba(255,255,255,.08)"/>
+        <rect x="18" y="170" width="262" height="42" rx="16" fill="rgba(255,79,216,.12)" stroke="rgba(255,79,216,.20)"/>
+        <text x="36" y="196" fill="rgba(255,255,255,.86)" font-family="JetBrains Mono,Consolas,monospace" font-size="12" font-weight="800">
+          CHECKOUT
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
